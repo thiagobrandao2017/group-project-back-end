@@ -8,7 +8,7 @@ const config = {
 };
 
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === 'production') {
   module.exports = pgp(process.env.DATABASE_URL);
 } else {
   module.exports = pgp(config);
