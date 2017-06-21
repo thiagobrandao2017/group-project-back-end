@@ -21,10 +21,17 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-app.use(require('./resources'));
+
+app.get('/', (req, res) => {
+  res.redirect(301, '/users');
+});
 
 // PORT
 const PORT = process.argv[2] || process.env.PORT || 3000;
 
+app.use(require('./resources'));
+
 // listener envocation
 app.listen(PORT, () => console.log(`Listening! Current port is: ${PORT}`));
+
+module.exports = app;

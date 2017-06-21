@@ -7,9 +7,12 @@ const config = {
   user:     process.env.DB_USER,
 };
 
+let db;
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = pgp(process.env.DATABASE_URL);
+  db = pgp(process.env.DATABASE_URL);
 } else {
-  module.exports = pgp(config);
+  db = pgp(config);
 }
+
+module.exports = db;
