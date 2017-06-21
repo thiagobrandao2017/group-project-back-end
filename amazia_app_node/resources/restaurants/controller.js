@@ -5,7 +5,7 @@ let controller = {};
 controller.index = (req, res) => {
     Restaurant.findAll()
     .then(restaurants => {
-      res.render("?", { beers }); // What goes in here? am I even rendering?
+      res.send(restaurants);
     })
     .catch(err => console.log(err))
 }
