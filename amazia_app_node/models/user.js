@@ -23,4 +23,5 @@ User.findByEmail = (user) => {
     `, [user.email]);
 }
 
+
 module.exports = User;

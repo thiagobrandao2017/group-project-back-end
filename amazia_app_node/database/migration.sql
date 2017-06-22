@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -8,7 +8,7 @@ CREATE TABLE users (
   password VARCHAR(255)
 );
 
-DROP TABLE IF EXISTS restaurants CASCADE;
+DROP TABLE IF EXISTS restaurants;
 
 CREATE TABLE restaurants (
 id SERIAL PRIMARY KEY,
@@ -22,7 +22,7 @@ user_id INTEGER REFERENCES users(id),
 area VARCHAR(255)
 );
 
-DROP TABLE IF EXISTS favorite_restaurants CASCADE;
+DROP TABLE IF EXISTS favorite_restaurants:
 
 CREATE TABLE favorite_restaurants (
 id SERIAL PRIMARY KEY,
