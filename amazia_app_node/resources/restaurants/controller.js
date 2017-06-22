@@ -15,16 +15,47 @@ controller.index = (req, res) => {
             .json(err);
         });
 }
+controller.create = (req, res) => {
+    Restaurant
+    .create(req.body.restaurant)
+    .then((restaurant) => {
+        res
+        .status(201)
+        .json(restaurant);
+    })
+    .catch((err) => {
+        res
+        .status(400)
+        .json(err);
+    });
+}
 
-// controller.create = (req,res) => {
-//     Restaurant
-//     .create(req.body.restaurant, req.session.user)
-//     .then(() => {
-//       res.redirect('/');
-//     })
-//     .catch((err) => {
-//       res.send(err);
-//     })
-// }
+controller.show = (req, res) => {
+    Restaurant
+    .findById(req.params.id)
+    .then((restaurant) => {
+        res
+        .status(200)
+        .json(restaurant);
+    })
+    .catch((err) => {
+        res
+        .status(400)
+        .json(err);
+    });
+}
+
+controller.update = (req, res) => {
+    Restaurant
+    .update(req.body.restaurant, req.params.id)
+    .then(() => {
+        res.sendStatus(200);
+    })
+    .catch((err) => {
+        res
+        .status(400)
+        .json(err);
+    });
+}
 
 module.exports = controller;
