@@ -6,6 +6,10 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha"
   },
+  "engines": {
+    "node": ">=7.9.0"
+  },
+  "engineStrict": true,
   "author": "Thiago Julia Kevin",
   "license": "ISC",
   "dependencies": {
