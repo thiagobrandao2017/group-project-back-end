@@ -36,10 +36,11 @@ Restaurant.findById = (id) => {
         WHERE id = $1
     `, [id]);
 }
+
 Restaurant.update = (restaurant, id) => {
     return db.none(`
         UPDATE restaurants SET
-        restaurant_name = $1,
+         restaurant_name = $1,
          img_url = $2,
          description = $3,
          type = $4,

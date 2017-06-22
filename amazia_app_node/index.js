@@ -22,10 +22,6 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-app.get('/', (req, res) => {
-  res.redirect(301, '/users');
-});
-
 // PORT
 const PORT = process.argv[2] || process.env.PORT || 3000;
 

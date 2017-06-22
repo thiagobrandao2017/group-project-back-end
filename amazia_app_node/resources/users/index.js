@@ -3,7 +3,7 @@ const router = express.Router();
 
 const controller = require("./controller");
 
-router.route("/")
+router.route("/signup")
     .post(controller.create);
 
 router.route("/login")
