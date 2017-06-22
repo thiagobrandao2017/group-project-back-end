@@ -25,6 +25,9 @@ app.use(bodyParser.json());
 // PORT
 const PORT = process.argv[2] || process.env.PORT || 3000;
 
+const cors = require("cors");
+app.use(cors());
+
 app.use(require('./resources'));
 
 // listener envocation
