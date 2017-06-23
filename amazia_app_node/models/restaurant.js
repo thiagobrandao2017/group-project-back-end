@@ -46,16 +46,14 @@ Restaurant.update = (restaurant, id) => {
          type = $4,
          address = $5,
          rating = $6,
-         user_id = $7,
-         area = $8
-        WHERE id = $9
+         area = $7
+        WHERE id = $8
     `, [restaurant.restaurant_name,
         restaurant.img_url,
         restaurant.description,
         restaurant.type,
         restaurant.address,
         restaurant.rating,
-        restaurant.user_id,
         restaurant.area,
         id]);
 }

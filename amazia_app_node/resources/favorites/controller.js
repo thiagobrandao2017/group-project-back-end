@@ -3,8 +3,6 @@ const Favorite = require('../../models/favorite');
 let controller = {};
 
 controller.index = (req, res) => {
-    console.log(req.user);
-
     Favorite.favoritesIndex(req.user)
     .then((favorites) => {
             res
