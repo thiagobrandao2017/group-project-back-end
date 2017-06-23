@@ -1,3 +1,8 @@
+DROP DATABASE IF EXISTS restaurants_db;
+CREATE DATABASE restaurants_db;
+
+\c restaurants_db;
+
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
@@ -22,7 +27,7 @@ user_id INTEGER REFERENCES users(id),
 area VARCHAR(255)
 );
 
-DROP TABLE IF EXISTS favorite_restaurants:
+DROP TABLE IF EXISTS favorite_restaurants;
 
 CREATE TABLE favorite_restaurants (
 id SERIAL PRIMARY KEY,

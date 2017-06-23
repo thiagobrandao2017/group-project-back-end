@@ -4,6 +4,11 @@ const db = require("../config/database");
 
 let User = {};
 
+User.findAll = () => {
+  return db.any(`SELECT * FROM users;`);
+}
+
+
 User.create = (user) => {
     //Create salted hash password
     user.password = bcrypt.hashSync(user.password, 10);

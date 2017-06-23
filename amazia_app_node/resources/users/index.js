@@ -3,8 +3,9 @@ const router = express.Router();
 
 const controller = require("./controller");
 
-router.route("/signup")
-    .post(controller.create);
+router.route("/")
+    .post(controller.create)
+    .get(controller.index);
 
 router.route("/login")
     .post(controller.login);
