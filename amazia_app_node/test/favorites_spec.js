@@ -81,48 +81,48 @@ it('POST /favorites should return 201 status code and an object of the newly-cre
     });
 });
 
-it('GET /favorites/:id should return a 200 status code and an object with favorite restaurant data', (done) => {
-    request(app)
-    .get(`/favorites/${favoriteRecord.id}`)
-    .set({
-      "Authorization": jwtToken
-     })
-    .end((err, res) => {
-        expect(res.status).to.eq(200);
-        expect(res.body).to.be.an('object');
-        done();
-    })
-});
-
-
-it('PUT /favorites/:id should return 200 status code', (done) => {
-    request(app)
-    .put(`/favorites/${favoriteRecord.id}`)
-    .set({
-          "Authorization": jwtToken
-      })
-    .send({
-        restaurant: {
-            rating: 4
-        }
-    })
-    .end((err, res) => {
-        expect(res.status).to.eq(200);
-        done();
-    });
-});
-
-it("DELETE /favorites/:id should return a 200 status code", (done) => {
-    request(app)
-    .delete(`/favorites/${favoriteRecord.id}`)
-    .set({
-        "Authorization": jwtToken
-    })
-    .end((err, res) => {
-        expect(res.status).to.eq(200);
-        done();
-    });
-});
+// it('GET /favorites/:id should return a 200 status code and an object with favorite restaurant data', (done) => {
+//     request(app)
+//     .get(`/favorites/${favoriteRecord.id}`)
+//     .set({
+//       "Authorization": jwtToken
+//      })
+//     .end((err, res) => {
+//         expect(res.status).to.eq(200);
+//         expect(res.body).to.be.an('object');
+//         done();
+//     })
+// });
+//
+//
+// it('PUT /favorites/:id should return 200 status code', (done) => {
+//     request(app)
+//     .put(`/favorites/${favoriteRecord.id}`)
+//     .set({
+//           "Authorization": jwtToken
+//       })
+//     .send({
+//         restaurant: {
+//             rating: 4
+//         }
+//     })
+//     .end((err, res) => {
+//         expect(res.status).to.eq(200);
+//         done();
+//     });
+// });
+//
+// it("DELETE /favorites/:id should return a 200 status code", (done) => {
+//     request(app)
+//     .delete(`/favorites/${favoriteRecord.id}`)
+//     .set({
+//         "Authorization": jwtToken
+//     })
+//     .end((err, res) => {
+//         expect(res.status).to.eq(200);
+//         done();
+//     });
+// });
 
 
 });
