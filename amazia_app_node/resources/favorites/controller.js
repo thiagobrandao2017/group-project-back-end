@@ -3,7 +3,9 @@ const Favorite = require('../../models/favorite');
 let controller = {};
 
 controller.index = (req, res) => {
-    Favorite.favoritesIndex()
+    console.log(req.user);
+
+    Favorite.favoritesIndex(req.user)
     .then((favorites) => {
             res
             .status(200)
@@ -14,6 +16,16 @@ controller.index = (req, res) => {
             .status(400)
             .json(err);
         });
+}
+
+controller.save = (req, res) => {
+    Favorite.saveRestaurant(req.user, req.body.restaurant_id)
+    .then((data) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
 }
 
 module.exports = controller;

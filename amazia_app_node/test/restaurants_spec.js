@@ -31,15 +31,15 @@ describe('Restaurant Resource', () => {
       type: 'Test',
       address: 'Test avenue',
       rating: 3,
-      user_id: 1,
       area: 'Test area'
-    })
+    }, {id: 1})
     .then((restaurant) => {
       restaurantRecord = restaurant;
       done();
     })
     .catch((err) => {
       console.log(err);
+      done(err);
     })
   })
 

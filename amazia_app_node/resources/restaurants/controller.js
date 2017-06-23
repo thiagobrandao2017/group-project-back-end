@@ -17,7 +17,7 @@ controller.index = (req, res) => {
 }
 controller.create = (req, res) => {
     Restaurant
-    .create(req.body.restaurant)
+    .create(req.body.restaurant, req.user)
     .then((restaurant) => {
         res
         .status(201)

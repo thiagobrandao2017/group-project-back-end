@@ -6,7 +6,7 @@ Restaurant.findAll = () => {
     return db.any(`SELECT * FROM restaurants;`);
 }
 
-Restaurant.create = (restaurant) => {
+Restaurant.create = (restaurant, user) => {
     return db.one(`
         INSERT INTO restaurants
         (restaurant_name,
@@ -25,7 +25,7 @@ Restaurant.create = (restaurant) => {
         restaurant.type,
         restaurant.address,
         restaurant.rating,
-        restaurant.user_id,
+        user.id,
         restaurant.area
       ]);
 }

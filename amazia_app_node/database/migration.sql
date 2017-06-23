@@ -29,7 +29,7 @@ area VARCHAR(255)
 
 DROP TABLE IF EXISTS favorite_restaurants;
 
-CREATE TABLE favorite_restaurants (
+CREATE TABLE favorites (
 id SERIAL PRIMARY KEY,
 user_id INTEGER REFERENCES users(id),
 restaurant_id INTEGER REFERENCES restaurants(id)

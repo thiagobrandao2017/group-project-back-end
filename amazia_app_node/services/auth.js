@@ -17,6 +17,9 @@ AuthService.restrict = (req, res, next) => {
     const userData = jwt.verify(req.headers["authorization"], process.env.SECRET_KEY);
 
     if (userData) {
+        //Attach user to request object from JWT token
+        req.user = userData;
+
         next();
     } else {
         res
