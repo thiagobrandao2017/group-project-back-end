@@ -7,10 +7,7 @@ controller.index = (req, res) => {
     .then((restaurants) => {
             res
             .status(200)
-            .json({
-              restaurants: restaurants,
-              user: req.user
-            });
+            .json(restaurants);
         })
         .catch((err) => {
             res
