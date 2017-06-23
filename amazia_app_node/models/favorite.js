@@ -23,5 +23,23 @@ Favorite.saveRestaurant = (user, restaurant_id) => {
       `, [user.id, restaurant_id])
 }
 
+Favorite.findById = () => {
+    return db.oneOrNone(`
+        SELECT * FROM favorites
+        WHERE user_id = $1
+        AND id = $2
+    `, []);
+}
 
+Favorite.update = () => {
+    return db.none(`
+
+    `, );
+}
+
+Favorite.destroy = () => {
+    return db.none(`
+
+    `, );
+}
 module.exports = Favorite;
