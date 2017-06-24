@@ -6,12 +6,12 @@ const Auth = require("../../services/auth");
 
 
 router.route('/')
-.all(Auth.restrict)
+// .all(Auth.restrict)
 .get(controller.index)
 .post(controller.create);
 
 router.route('/:id')
-.all(Auth.restrict)
+// .all(Auth.restrict)
 .get(controller.show)
 .put(controller.update);
 

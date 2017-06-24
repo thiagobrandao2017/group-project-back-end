@@ -75,10 +75,9 @@ it('GET /restaurants should return 200 status code and an array of resturants', 
             type: 'Test',
             address: 'Test avenue',
             rating: 3,
-            user_id: 1,
             area: 'Test area'
           }
-      })
+      }, {id: 1})
       .end((err, res) => {
           expect(res.status).to.eq(201);
           expect(res.body).to.be.an('object');
@@ -108,7 +107,7 @@ it('GET /restaurants should return 200 status code and an array of resturants', 
         })
       .send({
           restaurant: {
-              rating: 3
+              rating: 6
           }
       })
       .end((err, res) => {

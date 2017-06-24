@@ -23,23 +23,25 @@ Favorite.saveRestaurant = (user, restaurant_id) => {
       `, [user.id, restaurant_id])
 }
 
-// Favorite.findById = () => {
-//     return db.oneOrNone(`
-//         SELECT * FROM favorites
-//         WHERE user_id = $1
-//         AND id = $2
-//     `, []);
-// }
-//
+Favorite.findById = (user, id) => {
+    return db.oneOrNone(`
+        SELECT * FROM favorites
+        WHERE user_id = $1
+        AND id = $2
+    `, [user.id, id]);
+}
+
 // Favorite.update = () => {
 //     return db.none(`
 //
 //     `, );
 // }
 //
-// Favorite.destroy = () => {
+// Favorite.destroy = (user,id) => {
 //     return db.none(`
-//
-//     `, );
+//       DELETE FROM favorites
+//       WHERE user_id = $1 AND id = $2
+//     `, [user.id, favorites.id]);
 // }
+
 module.exports = Favorite;

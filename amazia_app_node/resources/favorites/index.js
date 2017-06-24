@@ -10,10 +10,10 @@ router.route("/")
   .post(controller.save);
 
 
-// router.route("/:id")
-//   .all(AuthService.restrict)
-//   .get(controller.show)
-//   .put(controller.update)
-//   .delete(controller.destroy);
+router.route("/:id")
+  .all(Auth.restrict)
+  //   .delete(controller.destroy)
+  .get(controller.show);
+  //   .put(controller.update)
 
 module.exports = router;

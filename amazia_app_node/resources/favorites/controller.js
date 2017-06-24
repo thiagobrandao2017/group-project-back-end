@@ -26,17 +26,17 @@ controller.save = (req, res) => {
     });
 }
 
-// controller.show = (req, res) => {
-//     Favorite
-//     .findById(req.user, req.body.restaurant_id)
-//     .then((data) => {
-//       res.sendStatus(201);
-//     })
-//     .catch((err) => {
-//       res.send(err);
-//     })
-// }
-//
+controller.show = (req, res) => {
+    Favorite
+    .findById(req.user, req.params.id)
+    .then((data) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      res.send(err);
+    })
+}
+
 // controller.update = (req, res) => {
 //     Favorite
 //     .update(req.body.restaurant.id, req.user.id, req.params.id)
@@ -52,7 +52,7 @@ controller.save = (req, res) => {
 //
 // controller.destroy = (req, res) => {
 //     Favorite
-//     .destroy(req.body.restaurant.id, req.params.id)
+//     .destroy(req.user, req.body.id)
 //     .then(() => {
 //         res.sendStatus(200);
 //           })
