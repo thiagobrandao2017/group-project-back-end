@@ -30,7 +30,9 @@ controller.show = (req, res) => {
     Favorite
     .findById(req.user, req.params.id)
     .then((data) => {
-      res.sendStatus(201);
+      res.
+      sendStatus(201)
+      .json(data);
     })
     .catch((err) => {
       res.send(err);

@@ -25,9 +25,11 @@ Favorite.saveRestaurant = (user, restaurant) => {
 
 Favorite.findById = (user, id) => {
     return db.oneOrNone(`
-        SELECT * FROM favorites
-        WHERE user_id = $1
-        AND id = $2
+        SELECT * FROM restaurants
+        INNER JOIN favorites
+        ON favorites.restaurant_id = restaurants.id
+        WHERE favorites.user_id = $1
+        AND favorites.id = $2
     `, [user.id, id]);
 }
 
