@@ -5,14 +5,14 @@ let Favorite = {};
 Favorite.favoritesIndex = (user) => {
     return db.any(`
       SELECT *
-      FROM favorites
-      INNER JOIN restaurants
+      FROM restaurants
+      INNER JOIN favorites
       ON favorites.restaurant_id = restaurants.id
       WHERE favorites.user_id = $1;
       `, [user.id]);
 }
 
-Favorite.saveRestaurant = (user, restaurant_id) => {
+Favorite.saveRestaurant = (user, restaurant) => {
     return db.one(`
         INSERT INTO favorites
         (user_id,
@@ -20,7 +20,7 @@ Favorite.saveRestaurant = (user, restaurant_id) => {
         VALUES
         ($1,$2)
         RETURNING *
-      `, [user.id, restaurant_id])
+      `, [user.id, restaurant.restaurant_id])
 }
 
 Favorite.findById = (user, id) => {

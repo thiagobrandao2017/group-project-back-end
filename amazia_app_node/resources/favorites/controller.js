@@ -17,7 +17,7 @@ controller.index = (req, res) => {
 }
 
 controller.save = (req, res) => {
-    Favorite.saveRestaurant(req.user, req.body.restaurant_id)
+    Favorite.saveRestaurant(req.user, req.body)
     .then((data) => {
       res.sendStatus(201);
     })
