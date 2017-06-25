@@ -3,23 +3,26 @@ const Favorite = require('../../models/favorite');
 let controller = {};
 
 controller.index = (req, res) => {
-    Favorite.favoritesIndex(req.user)
+    Favorite
+    .favoritesIndex(req.user)
     .then((favorites) => {
-            res
-            .status(200)
-            .json(favorites);
-        })
-        .catch((err) => {
-            res
-            .status(400)
-            .json(err);
-        });
+      res
+      .status(200)
+      .json(favorites);
+    })
+    .catch((err) => {
+      res
+      .status(400)
+      .json(err);
+    });
 }
 
 controller.save = (req, res) => {
-    Favorite.saveRestaurant(req.user, req.body)
+    Favorite
+    .saveRestaurant(req.user, req.body)
     .then((data) => {
-      res.sendStatus(201);
+      res
+      .sendStatus(201);
     })
     .catch((err) => {
       res.send(err);
@@ -27,13 +30,11 @@ controller.save = (req, res) => {
 }
 
 controller.show = (req, res) => {
-   // console.log(req.body); => {}
-   // console.log(req.params.id); => favorites.id
     Favorite
     .findById(req.user, req.params.id)
     .then((data) => {
-      // data => does not bring back restaurants data that we need
-      res.status(201)
+      res
+      .status(201)
       .json(data);
     })
     .catch((err) => {
@@ -41,5 +42,31 @@ controller.show = (req, res) => {
     })
 }
 
+// controller.update = (req, res) => {
+//     Favorite
+//     .update(req.user,req.body,req.params.id)
+//     .then((data) => {
+//       res
+//       .sendStatus(200);
+//     })
+//     .catch((err) => {
+//       res
+//       .status(400)
+//       .json(err);
+//     });
+// }
 
+controller.destroy = (req, res) => {
+    Favorite
+    .destroy(req.user,req.params.id)
+    .then(() => {
+      res.
+      sendStatus(200);
+    })
+    .catch((err) => {
+      res
+      .status(400)
+      .json(err);
+    });
+}
 module.exports = controller;

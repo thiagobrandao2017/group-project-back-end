@@ -33,5 +33,14 @@ Favorite.findById = (user, id) => {
     `, [user.id, id]);
 }
 
-
+// Favorite.update = (user,restaurant,id) => {
+//
+// }
+Favorite.destroy = (user,id) => {
+  return db.none(`
+      DELETE FROM favorites
+      WHERE user_id = $1
+      AND id = $2
+    `, [user.id , id]);
+}
 module.exports = Favorite;
