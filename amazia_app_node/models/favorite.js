@@ -24,7 +24,6 @@ Favorite.saveRestaurant = (user, restaurant) => {
 }
 
 Favorite.findById = (user, id) => {
-  // tested in postgres and returned correct favorite restaurant
     return db.oneOrNone(`
         SELECT * FROM restaurants
         INNER JOIN favorites

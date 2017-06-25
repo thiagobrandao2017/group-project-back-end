@@ -1,7 +1,6 @@
 DROP DATABASE IF EXISTS restaurants_db;
 CREATE DATABASE restaurants_db;
 
-\c restaurants_db;
 
 DROP TABLE IF EXISTS users;
 
