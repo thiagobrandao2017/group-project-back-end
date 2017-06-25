@@ -12,8 +12,6 @@ router.route("/")
 
 router.route("/:id")
   .all(Auth.restrict)
-  //   .delete(controller.destroy)
   .get(controller.show);
-  //   .put(controller.update)
 
 module.exports = router;

@@ -27,11 +27,13 @@ controller.save = (req, res) => {
 }
 
 controller.show = (req, res) => {
+   // console.log(req.body); => {}
+   // console.log(req.params.id); => favorites.id
     Favorite
     .findById(req.user, req.params.id)
     .then((data) => {
-      res.
-      sendStatus(201)
+      // data => does not bring back restaurants data that we need
+      res.status(201)
       .json(data);
     })
     .catch((err) => {
@@ -39,30 +41,5 @@ controller.show = (req, res) => {
     })
 }
 
-// controller.update = (req, res) => {
-//     Favorite
-//     .update(req.body.restaurant.id, req.user.id, req.params.id)
-//     .then(() => {
-//        res.sendStatus(200);
-//     })
-//     .catch((err) => {
-//        res
-//        .status(400)
-//        .json(err);
-//     });
-// }
-//
-// controller.destroy = (req, res) => {
-//     Favorite
-//     .destroy(req.user, req.body.id)
-//     .then(() => {
-//         res.sendStatus(200);
-//           })
-//     .catch((err) => {
-//         res
-//         .status(400)
-//         .json(err);
-//     });
-// }
 
 module.exports = controller;

@@ -24,6 +24,7 @@ Favorite.saveRestaurant = (user, restaurant) => {
 }
 
 Favorite.findById = (user, id) => {
+  // tested in postgres and returned correct favorite restaurant
     return db.oneOrNone(`
         SELECT * FROM restaurants
         INNER JOIN favorites
@@ -33,17 +34,5 @@ Favorite.findById = (user, id) => {
     `, [user.id, id]);
 }
 
-// Favorite.update = () => {
-//     return db.none(`
-//
-//     `, );
-// }
-//
-// Favorite.destroy = (user,id) => {
-//     return db.none(`
-//       DELETE FROM favorites
-//       WHERE user_id = $1 AND id = $2
-//     `, [user.id, favorites.id]);
-// }
 
 module.exports = Favorite;
