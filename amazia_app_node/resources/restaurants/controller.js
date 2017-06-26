@@ -49,7 +49,8 @@ controller.update = (req, res) => {
     Restaurant
     .update(req.body.restaurant, req.params.id)
     .then(() => {
-        res.sendStatus(200);
+        res
+        .sendStatus(200);
     })
     .catch((err) => {
         res

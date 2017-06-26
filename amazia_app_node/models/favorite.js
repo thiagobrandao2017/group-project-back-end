@@ -33,9 +33,13 @@ Favorite.findById = (user, id) => {
     `, [user.id, id]);
 }
 
-// Favorite.update = (user,restaurant,id) => {
-//
+// Favorite.update = (user, restaurant, id) => {
+//   return db.none(`
+// 
+//     `)
 // }
+
+
 Favorite.destroy = (user,id) => {
   return db.none(`
       DELETE FROM favorites

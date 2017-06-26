@@ -41,11 +41,11 @@ controller.show = (req, res) => {
       res.send(err);
     })
 }
-
+//
 // controller.update = (req, res) => {
 //     Favorite
-//     .update(req.user,req.body,req.params.id)
-//     .then((data) => {
+//     .update(req.user,req.body.favorite,req.params.id)
+//     .then(() => {
 //       res
 //       .sendStatus(200);
 //     })
