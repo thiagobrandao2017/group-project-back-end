@@ -62,7 +62,7 @@ controller.login = (req, res) => {
                 //Send the JWT as a response
                 res
                 .status(201)
-                .json({token: token});
+                .json({token: token, user: user});
             } else {
                 //User is not authenticated
                 res
