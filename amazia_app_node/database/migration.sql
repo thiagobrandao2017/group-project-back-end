@@ -1,7 +1,3 @@
-DROP DATABASE IF EXISTS restaurants_db;
-CREATE DATABASE restaurants_db;
-
-
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
@@ -31,7 +27,8 @@ DROP TABLE IF EXISTS favorites;
 CREATE TABLE favorites (
 id SERIAL PRIMARY KEY,
 user_id INTEGER REFERENCES users(id),
-restaurant_id INTEGER REFERENCES restaurants(id)
+restaurant_id INTEGER REFERENCES restaurants(id),
+CONSTRAINT u_record UNIQUE (user_id,restaurant_id)
 );
 
 
