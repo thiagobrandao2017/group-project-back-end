@@ -1,6 +1,8 @@
 DROP DATABASE IF EXISTS restaurants_db;
 CREATE DATABASE restaurants_db;
 
+\c restaurants_db;
+
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
@@ -48,8 +50,8 @@ INSERT INTO restaurants
 VALUES
 ('Mission Chinese', 'https://media.timeout.com/images/100453571/image.jpg','New York outpost of the San Francisco eatery serving fiery, innovative takes on Sichuan cuisine.', 'Chinese', '171 E Broadway, New York, NY 10002', '9', 1, 'Lower East Side'),
 ('Casa Mono', 'https://static01.nyt.com/images/2015/09/16/dining/16REST-CASAMONO-slide-AS0C/16REST-CASAMONO-slide-AS0C-master1050.jpg', 'Small-bite fans gather at this intimate Gramercy nook for upscale Spanish dishes & a deep wine list.', 'Spanish', '52 Irving Pl, New York, NY 10003', '9', 1,'Gramercy Park'),
-('Sushi Tenoshi', 'http://www.chopsticksny.com/archives/contents/wp-content/uploads/0213_Tanoshi_main.jpg', 'Small, low-key Japanese pick offering high-quality omakase meals & a BYO policy.', 'Japanese', '1372 York Ave, New York, NY 10021', '9', 1,'Upper East Side'),
-('Momofuko Ko', 'https://static01.nyt.com/images/2015/10/14/dining/14REST-MOMOFUKU-slide-40ZH/14REST-MOMOFUKU-slide-40ZH-master1050.jpg', 'Tiny, tough-to-reserve eatery via David Chang offering multicourse, Asian-accented American meals.', 'American', '8 Extra Pl, New York, NY 10003', '10', 1,'Lower East Side'),
+('Sushi Tenoshi', 'http://www.chopsticksny.com/archives/contents/wp-content/uploads/0213_Tanoshi_main.jpg', 'Small, low-key Japanese pick offering high-quality omakase meals & a BYO policy.', 'Japanese', '1372 York Ave, New York, NY 10021', '9', 1,'UES'),
+('Momofuko Ko', 'https://static01.nyt.com/images/2015/10/14/dining/14REST-MOMOFUKU-slide-40ZH/14REST-MOMOFUKU-slide-40ZH-master1050.jpg', 'Tiny, tough-to-reserve eatery via David Chang''s offering multicourse, Asian-accented American meals.', 'American', '8 Extra Pl, New York, NY 10003', '10', 1,'Lower East Side'),
 ('Emily', 'http://bpc.h-cdn.co/assets/17/23/980x490/landscape-1497022498-pizza-loves-emily-west-village.jpg', 'This cozy, gourmet eatery serves wood-fired Neapolitan pizzas, rustic small plates & pastas.','American', '35 Downing St, New York, NY 10014', '9', 1, 'West Village'),
 ('Casa Enrique', 'https://sometimesicrave.files.wordpress.com/2012/10/dsc4503.jpg', 'Casual cantina serving up refined Mexican classics & cocktails amid concrete floors & mod seating.', 'Mexican', '5-48 49th Ave, Long Island City, NY 11101', '8', 1, 'Long Island City'),
 ('Estela', 'https://media-cdn.tripadvisor.com/media/photo-s/0e/6a/7e/85/estela-restaurant.jpg', 'Small plates made with market ingredients & Mediterranean twists served in an unfussy cafe space.', 'Mediterranean', '47 E Houston St, New York, NY 10012', '8', 3, 'Lower East Side'),
@@ -65,14 +67,14 @@ VALUES
 ('Shuko', 'http://www.findeatdrink.com/Index/Restaurants/Entries/2014/7/21_shuko_beach_files/shukobeach_1-3.jpg', 'Compact, omakase-only Japanese choice for upscale sushi or more elaborate kaiseki meals.', 'Japanese', '47 E 12th St, New York, NY 10003', '9', 2,'Union Square Park'),
 ('Osteria Morini', 'https://www.nycgo.com/images/venues/5740/_osteria-morini-altamarea-group-02__x_large.jpg', 'Emilia-Romagna cuisine in a warm setting accented by pieces from a 1700s-era Italian farmhouse.', 'Italian', '218 Lafayette St, New York, NY 10012', '8', 2, 'Lower East Side'),
 ('Chote Nawab', 'http://newyork.seriouseats.com/assets_c/2013/09/20130918-chote-nawab-shrimp-thumb-610x404-353457.jpg', 'Modern decor meets Bollywood art at this Indian hot spot known for kebabs & dum biryani rice pots.', 'Indian', '115 Lexington Ave, New York, NY 10016', '7', 2,'Madison Square Park'),
-('Artichoke Pizza', 'https://img.grouponcdn.com/deal/ewJh8QWZr8tSPY1ToqvL2KHDJzE/ew-700x420/v1/c700x420.jpg', 'Patrons line up into the wee hours to snag signature artichoke pizza from this counter-service spot.', 'Pizza', '321 E 14th St, New York, NY 10003', '8', 1,'Eaat Village'),
+('Artichoke Pizza', 'https://img.grouponcdn.com/deal/ewJh8QWZr8tSPY1ToqvL2KHDJzE/ew-700x420/v1/c700x420.jpg', 'Patrons line up into the wee hours to snag signature artichoke pizza from this counter-service spot.', 'Pizza', '321 E 14th St, New York, NY 10003', '8', 1,'East Village'),
 ('Co.', 'http://kid-nosh.com/wp-content/uploads/2013/02/flatbread_pizza.jpg', 'Gourmet pizzas are made with inventive toppings at this restaurant with communal tables.', 'Pizza', '230 9th Ave, New York, NY 10001', '7', 1, 'West Village'),
-('Katz deli', 'http://ilovekatzs.com/wp-content/uploads/2011/11/pastrami1.jpg', 'No-frills deli with theatrically cranky service serving mile-high sandwiches since 1888.', 'Jewish', '205 E Houston St, New York, NY 10002', '8', 1, 'Lower East Side'),
+('Kat''z deli', 'http://ilovekatzs.com/wp-content/uploads/2011/11/pastrami1.jpg', 'No-frills deli with theatrically cranky service serving mile-high sandwiches since 1888.', 'Jewish', '205 E Houston St, New York, NY 10002', '8', 1, 'Lower East Side'),
 ('ABCV', 'https://www.wellandgood.com/wp-content/uploads/2017/03/abcv-opening-bowl.jpg', 'Vegan spot by Jean-Georges Vongerichten for seasonal plates, tonics & cocktails inside ABC Carpet.', 'Vegan', '38 E 19th St, New York, NY 10003', '7', 1, 'Gramercy Park'),
 ('Loring Place', 'https://gotham-magazine.com/get/files/image/galleries/Loring-Place-3.jpg', 'Upscale-casual American restaurant for seasonal, wood-fired dishes, handmade pastas & pizzas.', 'American', '21 W 8th St, New York, NY 10011', '8', 3, 'East Village'),
 ('Pig Bleeker', 'https://pixel.nymag.com/imgs/daily/grub/2017/01/02/pig-beach/pig-beach-04.w710.h473.jpg', 'Airy, rustic-chic BBQ eatery with upscale smoked meats, market veggies & Italian accents.', 'Barbecue', '155 Bleecker St, New York, NY 10012', '8', 3,'East Village'),
 ('Marea', 'http://www.marea-nyc.com/files/371a525746019c8c3984acba897d7c1e_full_size.jpg', 'High-end Italian seafood & housemade pastas from Michael White in a chic Central Park South setting.', 'Italian', '240 Central Park S, New York, NY 10019', '9', 3,'Hells Kitchen'),
 ('Thursday Kitchen', 'https://woozoonyc.com/wp-content/uploads/2016/10/Must-try-Korean-Tapas-in-the-East-Village-Thursday-Kitchen-08-1024x680.jpg', 'Casual spot for Korean cooking with French & Spanish influences, plus playful drinks & desserts.', 'Eclectic', '424 E 9th St, New York, NY 10009', '8', 1, 'East Village'),
 ('Wildair', 'https://static01.nyt.com/images/2015/10/07/dining/07REST-WILDAIR-slide-I9ZF/07REST-WILDAIR-slide-I9ZF-facebookJumbo.jpg', 'An offshoot of Contra, this American restaurant serves sophisticated American fare in simple digs.', 'American', '142 Orchard St, New York, NY 10002', '8', 3, 'East Village'),
-('Kikis', 'https://s3-media1.fl.yelpcdn.com/bphoto/Q9eY3XT7BuHDFWA5jMhy-Q/348s.jpg', 'Straightforward Greek cuisine such as seafood & lamb served in warm digs with exposed-wood beams.', 'Greek', '130 Division St, New York, NY 10002', '8', 2, 'Lower East Side'),
+('Kiki''s', 'https://s3-media1.fl.yelpcdn.com/bphoto/Q9eY3XT7BuHDFWA5jMhy-Q/348s.jpg', 'Straightforward Greek cuisine such as seafood & lamb served in warm digs with exposed-wood beams.', 'Greek', '130 Division St, New York, NY 10002', '8', 2, 'Lower East Side'),
 ('Sushi Nakazawa', 'https://static01.nyt.com/images/2013/12/11/dining/11REST_395/11REST_395-master675.jpg', 'Destination sushi spot for high-end omakase (multicourse, chefs choice meals) in spare digs.', 'Japanese', '23 Commerce St, New York, NY 10014', '9', 1, 'Washington Square Park');
