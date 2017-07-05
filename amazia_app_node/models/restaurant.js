@@ -3,7 +3,11 @@ const db = require("../config/database");
 let Restaurant = {};
 
 Restaurant.findAll = () => {
-    return db.any(`SELECT * FROM restaurants;`);
+    return db.any(`
+      SELECT restaurants.id, restaurant_name, img_url, description, type, address, rating, area, favorites.user_id FROM restaurants
+      LEFT OUTER JOIN favorites ON
+      restaurants.id = favorites.restaurant_id;
+    `);
 }
 
 Restaurant.create = (restaurant, user) => {
